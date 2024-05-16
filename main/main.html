@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LED vezérlőpult</title>
+    <link rel="stylesheet" href="/main/main.css">
+    <link rel="stylesheet" href="/main/gui.css">
+    <link rel="stylesheet" href="/main/color.css">
+    <link rel="stylesheet" href="/main/slider.css">
+    <link rel="shortcut icon" href="/main/favicon.ico">
+</head>
+<body>
+    <div id="bg-gradient"></div>
+    <div id="config-container">
+        <div class="config-item">
+            <div class="settings-header">Információk</div>
+            <div id="infos">
+                <div id="info-sampleNbr">mintavételek száma:</div>
+                <div id="info-freq">mintavételi frekvencia:</div>
+                <div id="info-freqStep">lépésköz:</div>
+            </div>
+            <div class="settings-header">Globális beállítások</div>
+            <div id="global-settings"></div>
+        </div>
+    </div>
+    <svg width="0" height="0">
+        <clipPath id="path-circle" clipPathUnits="objectBoundingBox">
+            <path d="M0.5 0a0.5 0.5 0 0 1 0 1A0.5 0.5 0 0 1 0.5 0v0.13a0.37 0.37 0 0 0 0 0.74 0.37 0.37 0 0 0 0-0.74"/>
+        </clipPath>
+        <clipPath id="path-triangle" clipPathUnits="objectBoundingBox">
+            <path d="M0.86 0.5 0.32 0.18823v0.62354L0.86 0.5"/>
+        </clipPath>
+        <clipPath id="path-triangle-shaped" clipPathUnits="objectBoundingBox">
+            <path d="M.0246 1C.0093.9968-.0016.9811.0004.9652.0009.9612.0303.9018.2381.4863.4649.0328.4754.0118.479.0086.4838.0044.4913.0009.4971.0003.5063-.0007.5173.0034.5232.0101.5256.0128.5835.128.7633.4875.9919.9448 1.0001.9615 1.0005.9665 1.0017.98.9946.9919.982.998.9774 1.0001.9762 1.0003.9695 1.0003.9633 1.0002.9612.9996.9578.9983.9578.9983.7504.9081.7504.9081L.5004.8063.293.8964C.043.9983.043.9983.043.9983.0382.9999.0299 1.0012.0246 1Z"/>
+        </clipPath>
+    </svg>
+    <script src="/main/color.js"></script>
+    <script src="/main/slider.js"></script>
+    <script src="/main/gui.js"></script>
+    <script src="/main/effect.js"></script>
+    <script src="/main/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+.color-picker {
+    --var-color-picker-size: min(18em, var(--var-config-item-width));
+    position: relative;
+    padding: 0;
+    margin-top: .4em;
+}
+
+.color-circle {
+    width: var(--var-color-picker-size);
+    height: var(--var-color-picker-size);
+    clip-path: url(#path-circle);
+    background: conic-gradient(red, yellow, lime, aqua, blue, magenta, red);
+}
+
+.color-triangle {
+    --var-cur-color: red;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--var-color-picker-size);
+    height: var(--var-color-picker-size);
+    clip-path: url(#path-triangle);
+    background: conic-gradient(white 30deg, var(--var-cur-color) 30deg, var(--var-cur-color) 150deg, black 150deg, black 270deg, white 270deg);
+    filter: blur(calc(var(--var-color-picker-size)*0.13));
+    transform: rotate(-90deg);
+}
+
+.pointer-dot {
+    --var-gradient-offset: 14%;
+    --var-pointer-size: calc(var(--var-color-picker-size)/10);
+    position: absolute;
+    width: var(--var-pointer-size);
+    height: var(--var-pointer-size);
+    border-radius: 50%;
+    background: radial-gradient(transparent calc(var(--var-gradient-offset) + 34%), white calc(var(--var-gradient-offset) + 37%), black 68%, transparent 71%);
+    z-index: 99;
+    transition: transform 160ms linear;
+    pointer-events: none;
+}
+
+.hue-pointer {
+    top: calc(var(--var-color-picker-size)*0.017);
+    left: calc(var(--var-color-picker-size)*0.45);
+}
+
+.val-pointer {
+    top: calc(var(--var-color-picker-size)*0.425);
+    left: calc(var(--var-color-picker-size)*0.57);
+}
+
+.color-hue-selecting > .hue-pointer {
+    --var-gradient-offset: 2%;
+    transform: scale(125%);
+}
+
+.color-val-selecting > .val-pointer {
+    --var-gradient-offset: 2%;
+    transform: scale(125%);
+}

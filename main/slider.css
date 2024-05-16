@@ -1,0 +1,61 @@
+.slider {
+    --var-slider-height: 1.5em;
+    --var-slider-width: min(16.4em, calc(var(--var-config-item-width) - 1.6em));
+    --var-slider-pad: .28em;
+    --var-slider-start: 0;
+    --var-slider-end: 0;
+    position: relative;
+    width: var(--var-slider-width);
+    height: var(--var-slider-height);
+    border-style: solid;
+    border-width: .12em;
+    border-color: rgb(74, 62, 88);
+    border-radius: var(--var-slider-height);
+    padding: var(--var-slider-pad);
+    z-index: 0;
+    margin: .4em;
+}
+
+.slider-dot {
+    width: var(--var-slider-height);
+    height: var(--var-slider-height);
+    position: absolute;
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: calc(var(--var-slider-height)*.25);
+    border-color: rgb(101, 86, 124);
+    background: transparent;
+    border-radius: 50%;
+    top: var(--var-slider-pad);
+    box-shadow: 0 0 .4em rgba(0, 0, 0, 0.5);
+    transition: transform 180ms ease-out, box-shadow 200ms ease-in-out;
+}
+
+.slider-dot.slider-start {
+    left: calc(var(--var-slider-pad) + var(--var-slider-start)*(var(--var-slider-width) - var(--var-slider-height)));
+    z-index: 2;
+}
+
+.slider-dot.slider-end {
+    left: calc(var(--var-slider-pad) + var(--var-slider-end)*(var(--var-slider-width) - var(--var-slider-height)));
+    z-index: 3;
+}
+
+.slider-dot.active-slider {
+    background: rgb(174, 147, 199);
+    border-color: rgb(174, 147, 199);
+    transform: scale(130%);
+    box-shadow: 0 0 .7em rgba(217, 195, 231, 0.5);
+    z-index: 4;
+}
+
+.slider-fill {
+    position: absolute;
+    left: calc(var(--var-slider-pad) + var(--var-slider-start)*(var(--var-slider-width) - var(--var-slider-height)));
+    width: calc(var(--var-slider-end)*(var(--var-slider-width) - var(--var-slider-height)) - var(--var-slider-start)*(var(--var-slider-width) - var(--var-slider-height)) + var(--var-slider-height));
+    height: calc(var(--var-slider-height) + var(--var-slider-pad)*2);
+    background: rgb(64, 48, 75);
+    border-radius: var(--var-slider-height);
+    top: 0;
+    z-index: 1;
+}
